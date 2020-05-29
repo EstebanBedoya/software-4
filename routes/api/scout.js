@@ -308,6 +308,7 @@ router.put('/cambiarUnidad/:id/:fecha', async(req, res) => {
 
     try {
         const _id = req.params.id
+        const fecha = req.params.fecha
 
         console.log(fechaNac);
         var uni = calcularUnidad(fecha)
