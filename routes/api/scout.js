@@ -304,13 +304,13 @@ function calcularUnidad(fecha) {
 }
 
 
-router.put('/cambiarUnidad/:id/', async(req, res) => {
+router.put('/cambiarUnidad/:id/:fecha', async(req, res) => {
 
     try {
         const _id = req.params.id
 
         console.log(fechaNac);
-        var uni = calcularUnidad(fechaNac)
+        var uni = calcularUnidad(fecha)
 
 
         res.json(await Persona.findOneAndUpdate({ id: _id }, { unidad: uni }, { new: true }));
